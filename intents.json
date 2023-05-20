@@ -1,0 +1,175 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [ "Hi","Hey","How are you", "Is anyone there?", "Hello", "Good day" ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "diabetes_symptoms",
+      "patterns": ["What are the symptoms of diabetes?", "How do I know if I have diabetes?"],
+      "responses": ["The common symptoms of diabetes include increased thirst, frequent urination, extreme hunger, unexplained weight loss, fatigue, blurred vision, and slow-healing wounds or sores. If you are experiencing any of these symptoms, it is recommended to see a doctor."]
+    },
+    {
+      "tag": "diabetes_causes",
+      "patterns": ["What causes diabetes?", "What are the risk factors for diabetes?", "How can I prevent diabetes?"],
+      "responses": ["The causes of diabetes are a combination of genetic and environmental factors. The risk factors for diabetes include obesity, physical inactivity, high blood pressure, high cholesterol, and family history of diabetes. To prevent diabetes, it is recommended to maintain a healthy weight, eat a balanced diet, exercise regularly, and avoid smoking."]
+    },
+    {
+      "tag": "parkinsons_symptoms",
+      "patterns": ["What are the symptoms of Parkinson's disease?", "How do I know if I have Parkinson's disease?"],
+      "responses": ["The common symptoms of Parkinson's disease include tremors, stiffness, slow movement, poor balance and coordination, and difficulty speaking or writing. If you are experiencing any of these symptoms, it is recommended to see a doctor."]
+    },
+    {
+      "tag": "parkinsons_causes",
+      "patterns": ["What causes Parkinson's disease?", "What are the risk factors for Parkinson's disease?", "How can I prevent Parkinson's disease?"],
+      "responses": ["The causes of Parkinson's disease are not fully understood, but it is believed to be a combination of genetic and environmental factors. The risk factors for Parkinson's disease include age, family history, exposure to certain toxins, and head injuries. Currently, there is no way to prevent Parkinson's disease."]
+    },
+    {
+      "tag": "heart_disease_symptoms",
+      "patterns": ["What are the symptoms of heart disease?", "How do I know if I have heart disease?"],
+      "responses": ["The common symptoms of heart disease include chest pain, shortness of breath, fatigue, dizziness, nausea, and irregular heartbeat. If you are experiencing any of these symptoms, it is recommended to see a doctor."]
+    },
+    {
+      "tag": "heart_disease_causes",
+      "patterns": ["What causes heart disease?", "What are the risk factors for heart disease?", "How can I prevent heart disease?"],
+      "responses": ["The causes of heart disease are a combination of genetic and lifestyle factors. Some of the risk factors for heart disease include high blood pressure, high cholesterol, smoking, physical inactivity, obesity, diabetes, stress, and poor diet. To prevent heart disease, it is recommended to maintain a healthy weight, exercise regularly, quit smoking, eat a balanced diet, manage stress, and monitor your blood pressure and cholesterol levels."]
+    },
+    {
+      "tag": "appointment_booking",
+      "patterns": ["How can I book a doctor's appointment?", "Can you help me schedule an appointment with a doctor?", "What is the process for booking an appointment?"],
+      "responses": ["Yes, we offer doctor's appointment booking services. You can book an appointment by visiting our website or mobile app and selecting a doctor and a convenient time slot. You can also call our customer service team to schedule an appointment over the phone. We recommend booking in advance to secure your preferred time slot."]
+    }
+    ,
+    {
+      "tag": "bot_name",
+      "patterns": ["What is your name?", "What should I call you?", "Who are you?"],
+      "responses": ["My name is D'predicto. I am a chatbot designed to help you with disease prediction and answer any questions you may have about our app."]
+    }
+    ,
+    {
+      "tag": "appointment_cancellation",
+      "patterns": ["How can I cancel my doctor's appointment?", "I need to cancel my appointment, what should I do?", "What is the process for cancelling an appointment?"],
+      "responses": ["To cancel your appointment, please log in to your account on our website or mobile app and navigate to the appointment section. From there, you can select the appointment you wish to cancel and follow the prompts to confirm cancellation. Alternatively, you can call our customer service team to cancel the appointment over the phone. Please note that there may be a cancellation fee depending on the timing of the cancellation."]
+    }
+    ,
+    {
+      "tag": "diabetes_prediction",
+      "patterns": ["Can you predict if I have diabetes?", "How accurate is your diabetes prediction system?", "What factors does your diabetes prediction system consider?"],
+      "responses": ["Yes, we offer a diabetes prediction system that uses machine learning algorithms to analyze several factors that can contribute to diabetes. These factors include number of pregnancies, glucose levels, blood pressure, skin thickness, insulin levels, body mass index (BMI), diabetes pedigree function, and age. Our system is highly accurate and can help identify potential diabetes risks early."]
+    },
+    
+    {
+      "tag": "diabetes_prediction_accuracy",
+      "patterns": ["How accurate is your diabetes prediction system?", "What is the accuracy rate of your diabetes prediction system?", "Can I rely on your diabetes prediction system?"],
+      "responses": ["Our diabetes prediction system uses advanced machine learning algorithms and has been trained on a large dataset to achieve high accuracy. However, it is important to note that no prediction system is 100% accurate, and the results of our system should be used as a guide rather than a definitive diagnosis. We recommend consulting with a healthcare professional for a full diagnosis."]
+    },
+    
+    {
+      "tag": "diabetes_prediction_factors",
+      "patterns": ["What factors does your diabetes prediction system consider?", "What input parameters are required for your diabetes prediction system?", "Can you tell me more about the factors used in your diabetes prediction?"],
+      "responses": ["Our diabetes prediction system considers several factors that can contribute to diabetes, including number of pregnancies, glucose levels, blood pressure, skin thickness, insulin levels, body mass index (BMI), diabetes pedigree function, and age. These factors have been shown to be strongly associated with diabetes risk, and our system uses advanced algorithms to analyze them and provide an accurate prediction."]
+    },
+    {
+      "tag": "heart_disease_prediction",
+      "patterns": ["Can you predict if I have heart disease?", "How accurate is your heart disease prediction system?", "What factors does your heart disease prediction system consider?"],
+      "responses": ["Yes, we offer a heart disease prediction system that uses machine learning algorithms to analyze several factors that can contribute to heart disease. These factors include age, sex, chest pain type (cp), resting blood pressure (trestbps), cholesterol levels (chol), fasting blood sugar (fbs), resting electrocardiographic results (restecg), maximum heart rate achieved (thalach), exercise induced angina (exang), ST depression induced by exercise relative to rest (oldpeak), slope of the peak exercise ST segment (slope), number of major vessels colored by fluoroscopy (ca), and thalassemia (thal). Our system is highly accurate and can help identify potential heart disease risks early."]
+    },
+    
+    {
+      "tag": "heart_disease_prediction_accuracy",
+      "patterns": ["How accurate is your heart disease prediction system?", "What is the accuracy rate of your heart disease prediction system?", "Can I rely on your heart disease prediction system?"],
+      "responses": ["Our heart disease prediction system uses advanced machine learning algorithms and has been trained on a large dataset to achieve high accuracy. However, it is important to note that no prediction system is 100% accurate, and the results of our system should be used as a guide rather than a definitive diagnosis. We recommend consulting with a healthcare professional for a full diagnosis."]
+    },
+    
+    {
+      "tag": "heart_disease_prediction_factors",
+      "patterns": ["What factors does your heart disease prediction system consider?", "What input parameters are required for your heart disease prediction system?", "Can you tell me more about the factors used in your heart disease prediction?"],
+      "responses": ["Our heart disease prediction system considers several factors that can contribute to heart disease, including age, sex, chest pain type (cp), resting blood pressure (trestbps), cholesterol levels (chol), fasting blood sugar (fbs), resting electrocardiographic results (restecg), maximum heart rate achieved (thalach), exercise induced angina (exang), ST depression induced by exercise relative to rest (oldpeak), slope of the peak exercise ST segment (slope), number of major vessels colored by fluoroscopy (ca), and thalassemia (thal). These factors have been shown to be strongly associated with heart disease risk, and our system uses advanced algorithms to analyze them and provide an accurate prediction."]
+    },
+    {
+      "tag": "parkinsons_prediction",
+      "patterns": ["Can you predict if I have Parkinson's disease?", "How accurate is your Parkinson's disease prediction system?", "What factors does your Parkinson's disease prediction system consider?"],
+      "responses": ["Yes, we offer a Parkinson's disease prediction system that uses machine learning algorithms to analyze several factors that can contribute to Parkinson's disease. These factors include MDVP Fo, MDVP Fh, MDVP Fl, MDVP Jitter 1, MDVP Jitter 2, MDVP RAP, MDVP PPQ, Jitter DDP, MDVP Shimmer, MDVP Shimmer (dB), Shimmer APQ3, Shimmer APQ5, MDVP APQ, Shimmer DDA, NHR, HNR, RPDE, D2, DFA, Spread 1, Spread 2, and PPE. Our system is highly accurate and can help identify potential Parkinson's disease risks early."]
+    }
+    ,
+    {
+      "tag": "parkinsons_prediction_accuracy",
+      "patterns": ["How accurate is your Parkinson's disease prediction system?", "What is the accuracy rate of your Parkinson's disease prediction system?", "Can I rely on your Parkinson's disease prediction system?"],
+      "responses": ["Our Parkinson's disease prediction system uses advanced machine learning algorithms and has been trained on a large dataset to achieve high accuracy. However, it is important to note that no prediction system is 100% accurate, and the results of our system should be used as a guide rather than a definitive diagnosis. We recommend consulting with a healthcare professional for a full diagnosis."]
+    }
+    ,
+    {
+      "tag": "parkinsons_prediction_factors",
+      "patterns": ["What factors does your Parkinson's disease prediction system consider?", "What input parameters are required for your Parkinson's disease prediction system?", "Can you tell me more about the factors used in your Parkinson's disease prediction?"],
+      "responses": ["Our Parkinson's disease prediction system considers several factors that can contribute to Parkinson's disease, including MDVP Fo, MDVP Fh, MDVP Fl, MDVP Jitter 1, MDVP Jitter 2, MDVP RAP, MDVP PPQ, Jitter DDP, MDVP Shimmer, MDVP Shimmer (dB), Shimmer APQ3, Shimmer APQ5, MDVP APQ, Shimmer DDA, NHR, HNR, RPDE, D2, DFA, Spread 1, Spread 2, and PPE. These factors have been shown to be strongly associated with Parkinson's disease risk, and our system uses advanced algorithms to analyze them and provide an accurate prediction."]
+    },
+    {
+      "tag": "diabetes_info",
+      "patterns": ["What is diabetes?", "What are the symptoms of diabetes?", "How is diabetes treated?"],
+      "responses": ["Diabetes is a chronic medical condition that affects the way your body processes glucose, a type of sugar that provides energy to your cells. The most common symptoms of diabetes include frequent urination, excessive thirst, blurred vision, fatigue, and slow-healing sores or cuts. Diabetes can be managed with a combination of lifestyle changes, such as a healthy diet and regular exercise, and medication, such as insulin injections or oral medication."]
+    }
+    ,
+    {
+      "tag": "parkinsons_info",
+      "patterns": ["What is Parkinson's disease?", "What are the symptoms of Parkinson's disease?", "How is Parkinson's disease treated?"],
+      "responses": ["Parkinson's disease is a chronic and progressive neurological disorder that affects movement. The most common symptoms of Parkinson's disease include tremors, stiffness, slowness of movement, and difficulty with balance and coordination. There is currently no cure for Parkinson's disease, but it can be managed with a combination of medication, surgery, and lifestyle changes."]
+    }
+    ,
+    {
+      "tag": "heart_disease_info",
+      "patterns": ["What is heart disease?", "What are the symptoms of heart disease?", "How is heart disease treated?"],
+      "responses": ["Heart disease is a broad term that refers to several conditions that affect the heart, including coronary artery disease, heart rhythm disorders, and heart valve disease. The most common symptoms of heart disease include chest pain or discomfort, shortness of breath, fatigue, and swelling in the legs, ankles, or feet. Treatment for heart disease varies depending on the specific condition but may include lifestyle changes, medication, or surgery."]
+    }
+    ,
+    {
+      "tag": "diabetes_doctor",
+      "patterns": ["Can you recommend a doctor for diabetes?", "Who are the best doctors for diabetes?", "Where can I find a specialist for diabetes?"],
+      "responses": ["We can help you find a specialist for diabetes. Please provide your location and we will provide a list of recommended doctors in your area."]
+    },
+    
+    {
+      "tag": "parkinsons_doctor",
+      "patterns": ["Can you recommend a doctor for Parkinson's disease?", "Who are the best doctors for Parkinson's disease?", "Where can I find a specialist for Parkinson's disease?"],
+      "responses": ["We can help you find a specialist for Parkinson's disease. Please provide your location and we will provide a list of recommended doctors in your area."]
+    },
+    
+    {
+      "tag": "heart_disease_doctor",
+      "patterns": ["Can you recommend a doctor for heart disease?", "Who are the best doctors for heart disease?", "Where can I find a specialist for heart disease?"],
+      "responses": ["We can help you find a specialist for heart disease. Please provide your location and we will provide a list of recommended doctors in your area."]
+    },
+    
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}
