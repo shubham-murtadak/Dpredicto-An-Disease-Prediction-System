@@ -1,22 +1,60 @@
 from flask import Flask,render_template,request,jsonify
 from chat import get_response
+import pickle
+
+
 app = Flask(__name__)
 
+
+# Loading the ML Models
+
+dia_pred = pickle.load(open(r'"C:\Users\DELL\Desktop\Repo\dpredictoflask\dia_trained_model.pkl"', 'rb'))
+heart_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\heart_trained_model.pkl', 'rb'))
+park_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\park_trained_model.pkl', 'rb'))
+
+
+# Creating a Home Page
 @app.route('/')
 def home():
     return render_template('home.html')
 
+# Creating About Page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
+
+# Creating Contact Page
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
+
+# Creating Dpred Page
 @app.route('/diabetes')
 def diabetes():
     return render_template('diabetes.html')
+
+@app.route('/diabetes', methods=['POST'])
+def diabetes():
+    preg = request.form.get("pregnancies")
+    glu = request.form.get("Glucose")
+    bp = request.form.get("BP")
+    stv = request.form.get("SkinThickness")
+    insulin = request.form.get("Insulin")
+    bmi = request.form.get("BMI")
+    dpf = request.form.get("DPF")
+    age = request.form.get("Age")
+
+    # Using the obj of ML Model
+    predict = dia_pred.predict([[preg, glu, bp, stv, insulin, bmi, dpf, age]])
+
+    if predict == 1:
+        return render_template('dia.html', label=1)
+    else:
+        return render_template('dia.html', label=-1)
+
+    return "Please Enter Correct Values ! "
 
 @app.route('/heart')
 def heart():
@@ -31,12 +69,14 @@ def parkinsons():
 def index_get():
     return render_template("cbase.html")
 
-@app.post("/predict")
-def predict():
-    text=request.get_json().get("message")
-    response=get_response(text)
-    message={"answer":response}
-    return jsonify(message)
+
+# Whats the use of this code ?
+# @app.post("/predict")
+# def predict():
+#     text=request.get_json().get("message")
+#     response=get_response(text)
+#     message={"answer":response}
+#     return jsonify(message)
 
 
 if __name__ == '__main__':
