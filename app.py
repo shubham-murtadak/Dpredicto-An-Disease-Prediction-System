@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,jsonify
-from chat import get_response
+# from chat import get_response
 import pickle
 
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Loading the ML Models
 
-dia_pred = pickle.load(open(r'"C:\Users\DELL\Desktop\Repo\dpredictoflask\dia_trained_model.pkl"', 'rb'))
+dia_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\dia_trained_model.pkl', 'rb'))
 heart_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\heart_trained_model.pkl', 'rb'))
 park_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\park_trained_model.pkl', 'rb'))
 
@@ -35,8 +35,9 @@ def contact():
 def diabetes():
     return render_template('diabetes.html')
 
+
 @app.route('/diabetes', methods=['POST'])
-def diabetes():
+def dpred():
     preg = request.form.get("pregnancies")
     glu = request.form.get("Glucose")
     bp = request.form.get("BP")
@@ -56,6 +57,7 @@ def diabetes():
 
     return "Please Enter Correct Values ! "
 
+
 @app.route('/heart')
 def heart():
     return render_template('heart.html')
@@ -64,10 +66,10 @@ def heart():
 def parkinsons():
     return render_template('parkinsons.html')
 
-@app.get("/chat")
-
-def index_get():
-    return render_template("cbase.html")
+# @app.get("/chat")
+#
+# def index_get():
+#     return render_template("cbase.html")
 
 
 # Whats the use of this code ?
