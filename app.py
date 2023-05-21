@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,jsonify
-# from chat import get_response
+from chat import get_response
 import pickle
 
 
@@ -7,10 +7,9 @@ app = Flask(__name__)
 
 
 # Loading the ML Models
-
-dia_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\dia_trained_model.pkl', 'rb'))
-heart_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\heart_trained_model.pkl', 'rb'))
-park_pred = pickle.load(open(r'C:\Users\DELL\Desktop\Repo\dpredictoflask\park_trained_model.pkl', 'rb'))
+dia_pred = pickle.load(open('models/dia_trained_model.pkl', 'rb'))
+heart_pred = pickle.load(open('models/heart_trained_model.pkl', 'rb'))
+park_pred = pickle.load(open('models/park_trained_model.pkl', 'rb'))
 
 
 # Creating a Home Page
@@ -36,8 +35,8 @@ def diabetes():
     return render_template('diabetes.html')
 
 
-@app.route('/diabetes', methods=['POST'])
-def dpred():
+@app.route('/diabetes_result', methods=['POST'])
+def diabetes_result():
     preg = request.form.get("pregnancies")
     glu = request.form.get("Glucose")
     bp = request.form.get("BP")
