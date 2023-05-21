@@ -50,9 +50,9 @@ def diabetes_result():
     predict = dia_pred.predict([[preg, glu, bp, stv, insulin, bmi, dpf, age]])
 
     if predict == 1:
-        return render_template('dia.html', label=1)
+        return render_template('diabetes.html', label=1)
     else:
-        return render_template('dia.html', label=-1)
+        return render_template('diabetes.html', label=-1)
 
     return "Please Enter Correct Values ! "
 

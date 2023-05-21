@@ -1,67 +1,175 @@
-{% extends 'base.html' %}
-{% block content %}
-{% if message %}
-        <div class="alert alert-danger">{{ message }}</div>
-    {% endif %}
-<div class="container">
-    <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 10px black;">
-        <h2>This is basic Machine Learning and Deep Learning based WebApp.</h2>
-        <p>These Machine Learning models and Deep Leaning models are trained on large datasets and thousands of images.</p>
-        <br>
-        <h2>Model Accuracies:</h2>
-        <ul>
-            <li>Diabetes Model: <strong>98.25%</strong></li>
-            <li>Heart Disease Model: <strong>85.25%</strong></li>
-            <li>Perkinsons Model: <strong>95%</strong></li>
-        </ul>
-        <br>
-        <h3>Information about the Diseases which this webApp can predict.</h3>
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Diabetes</h4>
-                <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Urinating often.</li>
-                    <li>Feeling very thirsty.</li>
-                    <li>Extreme fatigue.</li>
-                    <li>Blurry vision.</li>
-                </ul>
-            </div>
-        </div>
-        <br>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Heart desease </h4>
-                <p>Heart desease is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Cough, which may produce greenish, yellow or even bloody mucus.</li>
-                    <li>Fever, sweating and shaking chills.</li>
-                    <li>Shortness of breath.</li>
-                    <li>Rapid, shallow breathing.</li>
-                </ul>
-            </div>
-        </div>
+html {
+  box-sizing: border-box;
+}
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Perkinsons desease </h4>
-                <p>Perkinsons is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Cough, which may produce greenish, yellow or even bloody mucus.</li>
-                    <li>Fever, sweating and shaking chills.</li>
-                    <li>Shortness of breath.</li>
-                    <li>Rapid, shallow breathing.</li>
-                </ul>
-            </div>
-        </div>
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-    </div>
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div class="about-section">
+
+  <h1>About Us Page</h1>
+  <p>We are the intelligent Aspiring Data Scientists </p>
+  <p></p>
 </div>
-{% endblock %}
+<style>
+    .team-members {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+  
+    .team-member {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .team-member-img {
+      height: 150px; /* Adjust the height as needed */
+      object-fit: cover;
+    }
+  </style>
+  
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="team-members">
+    <div class="team-member">
+      <div class="card">
+        <img src="../static/img/j.jpg" alt="Jane" class="team-member-img">
+        <div class="container">
+          <h2>Miss Akshata Kamerkar Mam</h2>
+          <p class="title">Co-Founder</p>
+          <p>She's the genius half of our dynamic duo, driving innovation as a female cofounder.</p>
+          <p>ak@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="team-member">
+      <div class="card">
+        <img src="../static/img/s.jpg" alt="Mike" class="team-member-img">
+        <div class="container">
+          <h2>Mr Shubham Murtadak</h2>
+          <p class="title">Co-Founder</p>
+          <p>He's the mastermind half of our dynamic duo, spearheading innovation as a male cofounder.</p>
+          <p>sam@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div class="card">
+        <img src="../static/img/t.jpg" alt="John" class="team-member-img">
+        <div class="container">
+          <h2>Mr Tejasraj Hadpe Sir</h2>
+          <p class="title">Creative Director:</p>
+          <p>He turns ideas into visual masterpieces, painting the canvas of innovation with his artistic brilliance.</p>
+          <p>th@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div class="card">
+        <img src="../static/img/k.jpg" alt="Placeholder" class="team-member-img">
+        <div class="container">
+          <h2>Mr Sarvesh Kamble Sir</h2>
+          <p class="title">Tech Guru</p>
+          <p>With his coding prowess, he weaves lines of logic to create digital wonders, making technology dance to his command.</p>
+          <p>sk@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div class="card">
+        <img src="../static/img/a.jpg" alt="Placeholder" class="team-member-img">
+        <div class="container">
+          <h2>Ms Aniket Hupale Sir</h2>
+          <p class="title">Marketing Maestro</p>
+          <p>Armed with his persuasive charm, he conquers markets and captivates audiences, transforming products into sensations.</p>
+          <p>ah@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+</body>
+</html>
