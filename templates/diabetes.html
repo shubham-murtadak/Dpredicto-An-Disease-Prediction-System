@@ -165,106 +165,47 @@
        <div class="row">
          <div class="col-md-10 col-sm-6 mx-auto">
            <form class="" action="/predict" method="post">
-
              <div class="form-group">
                <input type="number" name="age" id="age" class="form-control" required>
                <label for="age" class="ph-area">Enter Your Age</label>
              </div>
-
              <div class="form-group">
-               <select class="form-control" name="sex" required="required">
-                 <option value="" selected>Select Gender</option>
-                 <option value="1">Male</option>
-                 <option value="0">Female</option>
-               </select>
+               <input type="number" name="Pregnancies" id="Pregnancies" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Pregnancies</label>
              </div>
-
              <div class="form-group">
-               <select class="form-control chosenn" name="cp" required="required">
-                 <option value="" selected>Select Chest Pain Type(cp)</option>
-                 <option value="0">Typical Angina</option>
-                 <option value="1">Atypical Angina</option>
-                 <option value="2">Non Anginal Pain</option>
-                 <option value="3">Asymptomatic</option>
-               </select>
+               <input type="number" name="Glucose" id="Glucose" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Glucose level</label>
              </div>
-
              <div class="form-group">
                <input type="number" name="trestbps" id="trestbps" class="form-control" required>
                <label for="trestbps" class="ph-area">Enter Resting Blood Pressure (mm Hg)(trestbps)</label>
              </div>
 
              <div class="form-group">
-               <input type="number" name="chol" id="chol" class="form-control" required>
-               <label for="chol" class="ph-area">Enter Serum Cholestoral (mg/dl)(chol)</label>
+               <input type="number" name="BloodPressure" id="bp" class="form-control" required>
+               <label for="chol" class="ph-area">Enter Your BloodPressure</label>
              </div>
-
              <div class="form-group">
-               <select class="form-control" name="fbs" required="required">
-                 <option value="" selected>Fasting Blood Sugar > 120 (mg/dl)(fbs)</option>
-                 <option value="1">Yes</option>
-                 <option value="0">No</option>
-               </select>
+               <input type="number" name="SkinThickness" id="sk" class="form-control" required>
+               <label for="chol" class="ph-area">Enter Your SkinThickness</label>
              </div>
 
-
+         
              <div class="form-group">
-               <select class="form-control chosenn" name="restecg" required="required">
-                 <option value="" selected>Rresting Electrocardiographic Results(restecg)</option>
-                 <option value="0">Normal</option>
-                 <option value="1">Abnormal</option>
-                 <option value="2">Probable</option>
-               </select>
+               <input type="number" name="Insulin" id="insulin" class="form-control" required>
+               <label for="thalach" class="ph-area">Enter Your Insulin level</label>
              </div>
-
+         
              <div class="form-group">
-               <input type="number" name="thalach" id="thalach" class="form-control" required>
-               <label for="thalach" class="ph-area">Enter Maximum Heart Rate Achieved (thalach)</label>
+               <input type="number" name="Bmi" id="bmi" class="form-control" required>
+               <label for="thalach" class="ph-area">Enter Your Bmi value </label>
              </div>
-
              <div class="form-group">
-               <select class="form-control" name="exang" required="required">
-                 <option value="" selected>Select Exercise Induced Angina (exang)</option>
-                 <option value="1">Yes</option>
-                 <option value="0">No</option>
-               </select>
+               <input type="number" name="DiabtesPedigreefunction" id="dpf" class="form-control" required>
+               <label for="thalach" class="ph-area">Enter DiabtesPedigreefunction value </label>
              </div>
-
-             <div class="form-group">
-               <input type="text" name="oldpeak" id="oldpeak" class="form-control" required>
-               <label for="oldpeak" class="ph-area">Enter Your Oldpeak(oldpeak)</label>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="slope" required="required">
-                 <option value="" selected>Select Peak Exercise ST Segment (Slope)</option>
-                 <option value="0">Upsloping</option>
-                 <option value="1">Flat</option>
-                 <option value="2">Downsloping</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="ca" required="required">
-                 <option value="" selected>Number of Major Vessels (ca)</option>
-                 <option value="0">Zero</option>
-                 <option value="1">One</option>
-                 <option value="2">Two</option>
-                 <option value="3">Three</option>
-                 <option value="4">Four</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="thal" required="required">
-                 <option value="" selected>Select Thal Type (thal)</option>
-                 <option value="0">Normal</option>
-                 <option value="1">Fixed</option>
-                 <option value="2">Defect</option>
-                 <option value="3">Reversable</option>
-               </select>
-             </div>
-
+    
            <div class="form-group">
              <input type="submit" class="btn btn-primary" value="Submit">
              <input type="reset" class="btn btn-danger" value="Reset">

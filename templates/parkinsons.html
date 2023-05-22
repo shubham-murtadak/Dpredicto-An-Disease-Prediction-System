@@ -164,106 +164,107 @@
        <div class="row">
          <div class="col-md-10 col-sm-6 mx-auto">
            <form class="" action="/predict" method="post">
-
+            <!-- MDVPFo, MDVPFh, MDVPFl, MDVPJ1, MDVPJ2,MDVPRAP, MDVPPPQ,JitterDDP,MDVPShimmer, MDVPShimmer2,ShimmerAPQ3,ShimmerAPQ5,MDVPAPQ,ShimmerDDA,NHR, HNR,RPDE,D2,DFA,spread1,spread2,PPE -->
              <div class="form-group">
-               <input type="number" name="age" id="age" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Age</label>
+               <input type="number" name="mdvpfo" id="mdvpfo" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your  Average vocal fundamental frequency</label>
              </div>
-
              <div class="form-group">
-               <select class="form-control" name="sex" required="required">
-                 <option value="" selected>Select Gender</option>
-                 <option value="1">Male</option>
-                 <option value="0">Female</option>
+               <input type="number" name="mdvpfh" id="mdvpfh" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Maximum vocal fundamental frequency</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvpf1" id="mdvpf1" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Minimum vocal fundamental frequency</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvpj1" id="mdvpj1" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Jitter(%)</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvpj2" id="mdvpj2" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Jitter(Abs)</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvprap" id="mdvprap" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your MDVP:RAP</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvppq" id="mdvppq" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your MDVP:PPQ</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="jitterddp" id="jitterddp" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Jitter:DDP </label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvpshimner" id="mdvpshimner" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your MDVPShimmer</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvpshimner2" id="mdvpshimner2" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your MDVP:Shimmer(dB)</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="shimnerapq3" id="shimnerapq3" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Shimmer:APQ3</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="shimnerapq5" id="shimnerapq5" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Shimmer:APQ5</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="mdvpapq" id="mdvpapq" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your MDVP:APQ</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="shimnerdda" id="shimnerdda" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your Shimmer:DDA</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="nhr" id="nhr" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your NHR</label>
+             </div>
+             <div class="form-group">
+               <input type="number" name="hnr" id="hnr" class="form-control" required>
+               <label for="age" class="ph-area">Enter Your NHR</label>
+             </div>
+        
+             <div class="form-group">
+               <select class="form-control" name="status" required="required">
+                 <option value="" selected>Select Health status</option>
+                 <option value="1">Healthy</option>
+                 <option value="0">Unhealthy</option>
                </select>
              </div>
 
              <div class="form-group">
-               <select class="form-control chosenn" name="cp" required="required">
-                 <option value="" selected>Select Chest Pain Type(cp)</option>
-                 <option value="0">Typical Angina</option>
-                 <option value="1">Atypical Angina</option>
-                 <option value="2">Non Anginal Pain</option>
-                 <option value="3">Asymptomatic</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <input type="number" name="trestbps" id="trestbps" class="form-control" required>
-               <label for="trestbps" class="ph-area">Enter Resting Blood Pressure (mm Hg)(trestbps)</label>
-             </div>
-
-             <div class="form-group">
-               <input type="number" name="chol" id="chol" class="form-control" required>
-               <label for="chol" class="ph-area">Enter Serum Cholestoral (mg/dl)(chol)</label>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control" name="fbs" required="required">
-                 <option value="" selected>Fasting Blood Sugar > 120 (mg/dl)(fbs)</option>
-                 <option value="1">Yes</option>
-                 <option value="0">No</option>
-               </select>
-             </div>
-
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="restecg" required="required">
-                 <option value="" selected>Rresting Electrocardiographic Results(restecg)</option>
-                 <option value="0">Normal</option>
-                 <option value="1">Abnormal</option>
-                 <option value="2">Probable</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <input type="number" name="thalach" id="thalach" class="form-control" required>
-               <label for="thalach" class="ph-area">Enter Maximum Heart Rate Achieved (thalach)</label>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control" name="exang" required="required">
-                 <option value="" selected>Select Exercise Induced Angina (exang)</option>
-                 <option value="1">Yes</option>
-                 <option value="0">No</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <input type="text" name="oldpeak" id="oldpeak" class="form-control" required>
-               <label for="oldpeak" class="ph-area">Enter Your Oldpeak(oldpeak)</label>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="slope" required="required">
-                 <option value="" selected>Select Peak Exercise ST Segment (Slope)</option>
-                 <option value="0">Upsloping</option>
-                 <option value="1">Flat</option>
-                 <option value="2">Downsloping</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="ca" required="required">
-                 <option value="" selected>Number of Major Vessels (ca)</option>
-                 <option value="0">Zero</option>
-                 <option value="1">One</option>
-                 <option value="2">Two</option>
-                 <option value="3">Three</option>
-                 <option value="4">Four</option>
-               </select>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control chosenn" name="thal" required="required">
-                 <option value="" selected>Select Thal Type (thal)</option>
-                 <option value="0">Normal</option>
-                 <option value="1">Fixed</option>
-                 <option value="2">Defect</option>
-                 <option value="3">Reversable</option>
-               </select>
-             </div>
-
+                <input type="number" name="rdpe" id="rdpe" class="form-control" required>
+                <label for="age" class="ph-area">Enter Your RDPE</label>
+              </div>
+         
+              <div class="form-group">
+                <input type="number" name="d2" id="d2" class="form-control" required>
+                <label for="age" class="ph-area">Enter Your D2</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="dfa" id="dfa" class="form-control" required>
+                <label for="age" class="ph-area">Enter Your DFA</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="spread1" id="spread1" class="form-control" required>
+                <label for="age" class="ph-area">Enter Your Spread1</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="spread2" id="spread2" class="form-control" required>
+                <label for="age" class="ph-area">Enter Your Spread2</label>
+              </div>
+              
+              <div class="form-group">
+                <input type="number" name="ppe" id="ppe" class="form-control" required>
+                <label for="age" class="ph-area">Enter Your PPE</label>
+              </div>
+              
            <div class="form-group">
              <input type="submit" class="btn btn-primary" value="Submit">
              <input type="reset" class="btn btn-danger" value="Reset">
