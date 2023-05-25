@@ -216,9 +216,85 @@ def parkinsons_result():
 #     message={"answer":response}
 #     return jsonify(message)
 
-@app.route('/appointment', methods=['GET', 'POST'])
+@app.route('/a')
 def appointment():
+    return render_template("a.html")
 
-    return render_template('a.html')
+@app.route('/a', methods=["POST"])
+def appointment_booking():
+    # No need for OTP here, for appointment booking use OTP create a button confirm booking once clicked run the otp code
+
+    mail_user = os.environ.get('TestUser')
+    mail_pass = os.environ.get('TestUserPass')
+
+    def GenEmailA(email, name, date, time, disease):
+        subject = "Appointment Confirmation!"
+        body = '''
+            Dear {},
+
+            We are pleased to confirm your appointment for a medical consultation at our clinic. We appreciate your trust in our services and look forward to providing you with the best possible care. Please find the details of your appointment below:
+
+            Patient's Name: {}
+            Date: {}
+            Time: {}
+            Type of Disease: {}
+
+            Please make sure to arrive at least 15 minutes before your scheduled appointment time to complete any necessary paperwork and to ensure a smooth check-in process.
+
+            In case of any changes or if you need to reschedule your appointment, kindly notify us at least 24 hours in advance so that we can accommodate your request and offer the slot to another patient in need.
+
+            For any questions or concerns, feel free to reach out to our clinic at dpredicto@gmail.com. Our team will be more than happy to assist you.
+
+            We look forward to seeing you soon and working towards your well-being.
+        '''.format(name, name, date, time, disease)
+
+        em = EmailMessage()
+        em['From'] = mail_user
+        em['To'] = email
+        em['Subject'] = subject
+        em.set_content(body)
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+            smtp.login(mail_user, mail_pass)
+            smtp.sendmail(mail_user, email, em.as_string())
+
+    name = request.form.get('name')
+    email = request.form.get('email')
+    date = request.form.get('date')
+    time = request.form.get('samay')
+    disease = request.form.get('type')
+
+    GenEmailA(email, name, date, time, disease)
+    return render_template("a.html", label=1)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
