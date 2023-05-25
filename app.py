@@ -6,15 +6,16 @@ from email.message import EmailMessage    # For email automation
 import ssl
 import smtplib
 import random                           # for generating random nums for OTP
-
+import numpy as np
+from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
 
 # Loading the ML Models
-# dia_pred = pickle.load(open('models/dia_trained_model.pkl', 'rb'))
-# heart_pred = pickle.load(open('models/heart_trained_model.pkl', 'rb'))
-# park_pred = pickle.load(open('models/park_trained_model.pkl', 'rb'))
+dia_pred = pickle.load(open('models/dia_trained_model.pkl', 'rb'))
+heart_pred = pickle.load(open('models/heart_trained_model.pkl', 'rb'))
+park_pred = pickle.load(open('models/park_trained_model.pkl', 'rb'))
 
 
 # Creating a Home Page
@@ -76,26 +77,39 @@ def diabetes():
     return render_template('diabetes.html')
 
 
-@app.route('/diabetes_result', methods=['POST'])
+@app.route('/diabetes', methods=['POST'])
 def diabetes_result():
-    preg = request.form.get("pregnancies")
-    glu = request.form.get("Glucose")
-    bp = request.form.get("BP")
-    stv = request.form.get("SkinThickness")
-    insulin = request.form.get("Insulin")
-    bmi = request.form.get("BMI")
-    dpf = request.form.get("DPF")
-    age = request.form.get("Age")
+        scaler = StandardScaler()
 
-    # Using the obj of ML Model
-    predict = dia_pred.predict([[preg, glu, bp, stv, insulin, bmi, dpf, age]])
+        preg = request.form.get("pregnancies")
+        glu = request.form.get("Glucose")
+        bp = request.form.get("BP")
+        stv = request.form.get("SkinThickness")
+        insulin = request.form.get("Insulin")
+        bmi = request.form.get("BMI")
+        dpf = request.form.get("DPF")
+        age = request.form.get("Age")
 
-    if predict == 1:
-        return render_template('diabetes.html', label=1)
-    else:
-        return render_template('diabetes.html', label=-1)
+        input_data = (preg, glu, bp, stv, insulin, bmi, dpf, age)
 
-    return "Please Enter Correct Values ! "
+        # Transforming to Numpy Array
+        input_data_to_numpy_array = np.asarray(input_data)
+
+        # Reshaping the Data of the Model for one instance
+        input_dat_reshaped = input_data_to_numpy_array.reshape(1, -1)
+
+        # Standardize the input_data
+
+        std_data = scaler.transform(input_dat_reshaped)
+        # Using the obj of ML Model
+        predict = dia_pred.predict(std_data)
+
+        if predict[0] == 1:
+            return render_template('diabetes.html', label=1)
+        else:
+            return render_template('diabetes.html', label=-1)
+
+        return "Please Enter Correct Values ! "
 
 
 @app.route('/heart')
