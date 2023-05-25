@@ -104,7 +104,7 @@ def diabetes_result():
         # Using the obj of ML Model
         predict = heart_pred.predict(std_data)
 
-        if predict[0] == 1:
+        if predict[0] == 0:
             return render_template('diabetes.html', label=1)
         else:
             return render_template('diabetes.html', label=-1)
@@ -160,42 +160,57 @@ def parkinsons():
     return render_template('parkinsons.html')
 
 
+
 @app.route('/parkinsons', methods=['POST'])
 def parkinsons_result():
         scaler = StandardScaler()
 
-        age1 = request.form.get("age")
-        sex = request.form.get("sex")
-        cp = request.form.get("cp")
-        RBP = request.form.get("RBP")
-        chol = request.form.get("chol")
-        FBS = request.form.get("FBS")
-        RER = request.form.get("RER")
-        thalach = request.form.get("thalach")
-        ex = request.form.get("ex")
-        sl = request.form.get("sl")
-        op = request.form.get("op")
-        ca = request.form.get("ca")
-        thal = request.form.get("thal")
+        mdvpfo = request.form.get("mdvpfo")
+        mdvpfh = request.form.get("mdvpfh")
+        mdvpf1 = request.form.get("mdvpf1")
+        mdvpj1 = request.form.get("mdvpj1")
+        mdvpj2 = request.form.get("mdvpj2")
+        mdvprap = request.form.get("mdvprap")
+        mdvppq = request.form.get("mdvppq")
+        jitterddp = request.form.get("jitterddp")
+        mdvpshimner = request.form.get("mdvpshimner")
+        mdvpshimner2 = request.form.get("mdvpshimner2")
+        shimnerapq3 = request.form.get("shimnerapq3")
+        shimnerapq5 = request.form.get("shimnerapq5")
+        mdvpapq = request.form.get("mdvpapq")
+        shimnerdda = request.form.get("shimnerdda")
+        nhr = request.form.get("nhr")
+        hnr = request.form.get("hnr")
+        hs = request.form.get("hs")
+        rdpe = request.form.get("rdpe")
+        d2 = request.form.get("d2")
+        dfa = request.form.get("dfa")
+        spread1 = request.form.get("spread1")
+        spread2 = request.form.get("spread2")
+        ppe = request.form.get("ppe")
 
-        input_data_heart = (age1, sex, cp, RBP, chol, FBS, RER, thalach, ex, sl, op, ca, thal)
+
+        input_data_park = (mdvpfo, mdvpfh, mdvpf1, mdvpj1, mdvpj2,
+                           mdvprap, mdvppq, jitterddp, mdvpshimner, mdvpshimner2,
+                           shimnerapq3, shimnerapq5, mdvpapq, shimnerdda,
+                           nhr, hnr,hs, rdpe, d2, dfa,spread1, spread2, ppe)
 
         # Transforming to Numpy Array
-        input_data_to_numpy_array_heart = np.asarray(input_data_heart)
+        input_data_to_numpy_array_park = np.asarray(input_data_park)
 
         # Reshaping the Data of the Model for one instance
-        input_dat_reshaped_heart = input_data_to_numpy_array_heart.reshape(1, -1)
+        input_dat_reshaped_park = input_data_to_numpy_array_park.reshape(1, -1)
 
         # Standardize the input_data
-        scaler.fit(input_dat_reshaped_heart)
-        std_data_heart = scaler.transform(input_dat_reshaped_heart)
+        scaler.fit(input_dat_reshaped_park)
+        std_data_park = scaler.transform(input_dat_reshaped_park)
         # Using the obj of ML Model
-        predict = heart_pred.predict(std_data_heart)
+        predict_park = park_pred.predict(std_data_park)
 
-        if predict[0] == 1:
-            return render_template('heart.html', label=1)
+        if predict_park[0] == 1:
+            return render_template('parkinsons.html', label=1)
         else:
-            return render_template('heart.html', label=-1)
+            return render_template('parkinsons.html', label=-1)
 
         return "Please Enter Correct Values ! "
 

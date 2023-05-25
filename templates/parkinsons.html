@@ -163,106 +163,104 @@
      <div class="container my-5">
        <div class="row">
          <div class="col-md-10 col-sm-6 mx-auto">
-           <form class="" action="/predict" method="post">
+           <form class="" action="/parkinsons" method="post">
             <!-- MDVPFo, MDVPFh, MDVPFl, MDVPJ1, MDVPJ2,MDVPRAP, MDVPPPQ,JitterDDP,MDVPShimmer, MDVPShimmer2,ShimmerAPQ3,ShimmerAPQ5,MDVPAPQ,ShimmerDDA,NHR, HNR,RPDE,D2,DFA,spread1,spread2,PPE -->
              <div class="form-group">
                <input type="number" name="mdvpfo" id="mdvpfo" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your  Average vocal fundamental frequency</label>
+               <label for="mdvpfo" class="ph-area">Enter Your  Average vocal fundamental frequency</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpfh" id="mdvpfh" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Maximum vocal fundamental frequency</label>
+               <label for="mdvpfh" class="ph-area">Enter Your Maximum vocal fundamental frequency</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpf1" id="mdvpf1" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Minimum vocal fundamental frequency</label>
+               <label for="mdvpf1" class="ph-area">Enter Your Minimum vocal fundamental frequency</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpj1" id="mdvpj1" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Jitter(%)</label>
+               <label for="mdvpj1" class="ph-area">Enter Your Jitter(%)</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpj2" id="mdvpj2" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Jitter(Abs)</label>
+               <label for="mdvpj2" class="ph-area">Enter Your Jitter(Abs)</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvprap" id="mdvprap" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your MDVP:RAP</label>
+               <label for="mdvprap" class="ph-area">Enter Your MDVP:RAP</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvppq" id="mdvppq" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your MDVP:PPQ</label>
+               <label for="mdvppq" class="ph-area">Enter Your MDVP:PPQ</label>
              </div>
              <div class="form-group">
                <input type="number" name="jitterddp" id="jitterddp" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Jitter:DDP </label>
+               <label for="jitterddp" class="ph-area">Enter Your Jitter:DDP </label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpshimner" id="mdvpshimner" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your MDVPShimmer</label>
+               <label for="mdvpshimner" class="ph-area">Enter Your MDVPShimmer</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpshimner2" id="mdvpshimner2" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your MDVP:Shimmer(dB)</label>
+               <label for="mdvpshimner2" class="ph-area">Enter Your MDVP:Shimmer(dB)</label>
              </div>
              <div class="form-group">
                <input type="number" name="shimnerapq3" id="shimnerapq3" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Shimmer:APQ3</label>
+               <label for="shimnerapq3" class="ph-area">Enter Your Shimmer:APQ3</label>
              </div>
              <div class="form-group">
                <input type="number" name="shimnerapq5" id="shimnerapq5" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Shimmer:APQ5</label>
+               <label for="shimnerapq5" class="ph-area">Enter Your Shimmer:APQ5</label>
              </div>
              <div class="form-group">
                <input type="number" name="mdvpapq" id="mdvpapq" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your MDVP:APQ</label>
+               <label for="mdvpapq" class="ph-area">Enter Your MDVP:APQ</label>
              </div>
              <div class="form-group">
                <input type="number" name="shimnerdda" id="shimnerdda" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your Shimmer:DDA</label>
+               <label for="shimnerdda" class="ph-area">Enter Your Shimmer:DDA</label>
              </div>
              <div class="form-group">
                <input type="number" name="nhr" id="nhr" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your NHR</label>
+               <label for="nhr" class="ph-area">Enter Your NHR</label>
              </div>
              <div class="form-group">
                <input type="number" name="hnr" id="hnr" class="form-control" required>
-               <label for="age" class="ph-area">Enter Your NHR</label>
+               <label for="hnr" class="ph-area">Enter Your NHR</label>
              </div>
         
              <div class="form-group">
-               <select class="form-control" name="status" required="required">
-                 <option value="" selected>Select Health status</option>
-                 <option value="1">Healthy</option>
-                 <option value="0">Unhealthy</option>
-               </select>
+                  <input type="number" name="hs" id="hs" class="form-control" required>
+               <label for="hs" class="ph-area">Enter Your Health Status </label>
+
              </div>
 
              <div class="form-group">
                 <input type="number" name="rdpe" id="rdpe" class="form-control" required>
-                <label for="age" class="ph-area">Enter Your RDPE</label>
+                <label for="rdpe" class="ph-area">Enter Your RDPE</label>
               </div>
          
               <div class="form-group">
                 <input type="number" name="d2" id="d2" class="form-control" required>
-                <label for="age" class="ph-area">Enter Your D2</label>
+                <label for="d2" class="ph-area">Enter Your D2</label>
               </div>
               <div class="form-group">
                 <input type="number" name="dfa" id="dfa" class="form-control" required>
-                <label for="age" class="ph-area">Enter Your DFA</label>
+                <label for="dfa" class="ph-area">Enter Your DFA</label>
               </div>
               <div class="form-group">
                 <input type="number" name="spread1" id="spread1" class="form-control" required>
-                <label for="age" class="ph-area">Enter Your Spread1</label>
+                <label for="spread1" class="ph-area">Enter Your Spread1</label>
               </div>
               <div class="form-group">
                 <input type="number" name="spread2" id="spread2" class="form-control" required>
-                <label for="age" class="ph-area">Enter Your Spread2</label>
+                <label for="spread2" class="ph-area">Enter Your Spread2</label>
               </div>
               
               <div class="form-group">
                 <input type="number" name="ppe" id="ppe" class="form-control" required>
-                <label for="age" class="ph-area">Enter Your PPE</label>
+                <label for="ppe" class="ph-area">Enter Your PPE</label>
               </div>
               
            <div class="form-group">
@@ -274,6 +272,17 @@
        </div>
      </div>
    </div>
+
+   <div class="fin_res">
+       {% if label %}
+            {% if label == 1 %}
+                <h3 style = "color:red">Person has Parkinsons Disease !</h3>
+            {% else %}
+                <h3 style ="color:green"> Person does not have Parkinsons Disease !</h3>
+            {% endif %}
+       {% endif %}
+
+    </div>
 
 
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
