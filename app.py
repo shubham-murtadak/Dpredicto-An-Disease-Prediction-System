@@ -218,15 +218,7 @@ def parkinsons_result():
 
 @app.route('/appointment', methods=['GET', 'POST'])
 def appointment():
-    if request.method == 'POST':
-        # Process the form data
-        # Retrieve the form input using request.form.get or request.form['input_name']
-        # Perform necessary operations or validations
-        
-        # Return a response or redirect to a new page
-        return "Appointment booked successfully!"
 
-    # Render the HTML template for the appointment form
-    return render_template('appoitment.html')
+    return render_template('a.html')
 if __name__ == '__main__':
     app.run(debug=True)
