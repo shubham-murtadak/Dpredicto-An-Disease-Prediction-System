@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,jsonify
-from chat import get_response
+# from chat import get_response
 import pickle
 import os                             # For protection of email and password while email automation and otp genration
 from email.message import EmailMessage    # For email automation
