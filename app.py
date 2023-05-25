@@ -8,7 +8,7 @@ import smtplib
 import random                           # for generating random nums for OTP
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
 
 
@@ -221,19 +221,19 @@ def parkinsons_result():
 
 
 # Working on Db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///appointments.db'
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///appointments.db'
+# db = SQLAlchemy(app)
 
-class Appointment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.String(10), nullable=False)
-    time = db.Column(db.String(8), nullable=False)
-    disease = db.Column(db.String(100), nullable=False)
+# class Appointment(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(100), nullable=False)
+#     email = db.Column(db.String(100), nullable=False)
+#     date = db.Column(db.String(10), nullable=False)
+#     time = db.Column(db.String(8), nullable=False)
+#     disease = db.Column(db.String(100), nullable=False)
 
 # Create the database tables
-db.create_all()
+# db.create_all()
 
 @app.route('/a')
 def appointment():
@@ -285,38 +285,38 @@ def appointment_booking():
     time = request.form.get('samay')
     disease = request.form.get('type')
 
-    # Adding the data to the DataBase
-    appointment = Appointment(name= name, email= email, date=date, time=time, disease=disease)
-    db.session.add(appointment)
-    db.session.commit()
-
-
-    # Retriving the data from the dataBase
-    appointment_list = Appointment.query.all()
-    df = pd.DataFrame(
-        [(appointment.id, appointment.name, appointment.email, appointment.date, appointment.time, appointment.disease)
-         for appointment in appointment_list],
-        columns=['ID', 'Name', 'Email', 'Date', 'Time', 'Disease'])
-
-    file_path = 'appointments.xlsx'
-    df.to_excel(file_path, index=False)
+    # # Adding the data to the DataBase
+    # appointment = Appointment(name= name, email= email, date=date, time=time, disease=disease)
+    # db.session.add(appointment)
+    # db.session.commit()
+    #
+    #
+    # # Retriving the data from the dataBase
+    # appointment_list = Appointment.query.all()
+    # df = pd.DataFrame(
+    #     [(appointment.id, appointment.name, appointment.email, appointment.date, appointment.time, appointment.disease)
+    #      for appointment in appointment_list],
+    #     columns=['ID', 'Name', 'Email', 'Date', 'Time', 'Disease'])
+    #
+    # file_path = 'appointments.xlsx'
+    # df.to_excel(file_path, index=False)
 
 
     GenEmailA(email, name, date, time, disease)
     return render_template("a.html", label=1)
 
-@app.route('/view_excel')
-def view_excel():
-    appointment_list = Appointment.query.all()
-    df = pd.DataFrame([(appointment.id, appointment.name, appointment.email, appointment.date, appointment.time, appointment.disease)
-                       for appointment in appointment_list],
-                      columns=['ID', 'Name', 'Email', 'Date', 'Time', 'Disease'])
-
-    return render_template('view_excel.html', data=df.to_html())
+# @app.route('/view_excel')
+# def view_excel():
+#     appointment_list = Appointment.query.all()
+#     df = pd.DataFrame([(appointment.id, appointment.name, appointment.email, appointment.date, appointment.time, appointment.disease)
+#                        for appointment in appointment_list],
+#                       columns=['ID', 'Name', 'Email', 'Date', 'Time', 'Disease'])
+#
+#     return render_template('view_excel.html', data=df.to_html())
 
 
 if __name__ == '__main__':
-    db.create_all()
+    # db.create_all()
     app.run(debug=True)
 
 
