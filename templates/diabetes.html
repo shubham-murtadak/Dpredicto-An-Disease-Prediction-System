@@ -220,9 +220,33 @@
    <div class="fin_res">
        {% if label %}
             {% if label == 1 %}
-                <h3 style = "color:red">Person has Diabetes !</h3>
+            <div class="card text-center">
+              <div class="card-header" style="font-weight: bold; font-size: 24px;">
+                Result
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Person Is Diabetic</h5>
+                <p class="card-text">Consult with a doctor as soon as possible</p>
+                <a href="#" class="btn btn-primary">Book Appointment</a>
+              </div>
+              <div class="card-footer text-muted">
+              </div>
+            </div>
+            
             {% else %}
-                <h3 style ="color:green"> Person does not have Diabetes !</h3>
+            <div class="card text-center">
+              <div class="card-header" style="font-weight: bold; font-size: 24px;">
+                Result
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Person Is Diabetic</h5>
+                <p class="card-text">Consult with a doctor as soon as possible</p>
+                <a href="#" class="btn btn-primary">Book Appointment</a>
+              </div>
+              <div class="card-footer text-muted">
+              </div>
+            </div>
+            
             {% endif %}
        {% endif %}
 
