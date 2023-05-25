@@ -158,105 +158,73 @@
      <div class="container my-5">
        <div class="row">
          <div class="col-md-10 col-sm-6 mx-auto">
-           <form class="" action="/predict" method="post">
+           <form class="" action="/heart" method="post">
              <div class="form-group">
                <input type="number" name="age" id="age" class="form-control" required>
                <label for="age" class="ph-area">Enter Your Age</label>
              </div>
 
              <div class="form-group">
-               <select class="form-control" name="sex" required="required">
-                 <option value="" selected>Select Gender</option>
-                 <option value="1">Male</option>
-                 <option value="0">Female</option>
-               </select>
+               <input type="number" name="sex" id="sex" class="form-control" required>
+               <label for="sex" class="ph-area">Enter Sex ( 1 - Male , 0 - Female )</label>
              </div>
 
              <div class="form-group">
-               <select class="form-control chosenn" name="cp" required="required">
-                 <option value="" selected>Select Chest Pain Type(cp)</option>
-                 <option value="0">Typical Angina</option>
-                 <option value="1">Atypical Angina</option>
-                 <option value="2">Non Anginal Pain</option>
-                 <option value="3">Asymptomatic</option>
-               </select>
+               <input type="number" name="cp" id="cp" class="form-control" required>
+               <label for="cp" class="ph-area">Enter the Type of Chest Pain</label>
              </div>
 
              <div class="form-group">
-               <input type="number" name="trestbps" id="trestbps" class="form-control" required>
-               <label for="trestbps" class="ph-area">Enter Resting Blood Pressure (mm Hg)(trestbps)</label>
+               <input type="float" name="RBP" id="RBP" class="form-control" required>
+               <label for="RBP" class="ph-area">Enter the Resting Blood Pressure</label>
              </div>
 
              <div class="form-group">
-               <input type="number" name="chol" id="chol" class="form-control" required>
-               <label for="chol" class="ph-area">Enter Serum Cholestoral (mg/dl)(chol)</label>
-             </div>
-
-             <div class="form-group">
-               <select class="form-control" name="fbs" required="required">
-                 <option value="" selected>Fasting Blood Sugar > 120 (mg/dl)(fbs)</option>
-                 <option value="1">Yes</option>
-                 <option value="0">No</option>
-               </select>
+               <input type="float" name="chol" id="chol" class="form-control" required>
+               <label for="chol" class="ph-area">Enter Serum Cholestoral Value (mg/dl)(chol)</label>
              </div>
 
 
              <div class="form-group">
-               <select class="form-control chosenn" name="restecg" required="required">
-                 <option value="" selected>Rresting Electrocardiographic Results(restecg)</option>
-                 <option value="0">Normal</option>
-                 <option value="1">Abnormal</option>
-                 <option value="2">Probable</option>
-               </select>
+               <input type="float" name="FBS" id="FBS" class="form-control" required>
+               <label for="FBS" class="ph-area">Enter the Fasting Blood Sugar Value ( >120 mg/dl)</label>
              </div>
 
              <div class="form-group">
-               <input type="number" name="thalach" id="thalach" class="form-control" required>
+               <input type="float" name="RER" id="RER" class="form-control" required>
+               <label for="RER" class="ph-area">Enter the Resting Electro-cardiographic Results</label>
+             </div>
+
+             <div class="form-group">
+               <input type="float" name="thalach" id="thalach" class="form-control" required>
                <label for="thalach" class="ph-area">Enter Maximum Heart Rate Achieved (thalach)</label>
              </div>
 
              <div class="form-group">
-               <select class="form-control" name="exang" required="required">
-                 <option value="" selected>Select Exercise Induced Angina (exang)</option>
-                 <option value="1">Yes</option>
-                 <option value="0">No</option>
-               </select>
+               <input type="float" name="ex" id="ex" class="form-control" required>
+               <label for="ex" class="ph-area">Enter Exercise Induced Angina Value</label>
              </div>
 
              <div class="form-group">
-               <input type="text" name="oldpeak" id="oldpeak" class="form-control" required>
-               <label for="oldpeak" class="ph-area">Enter Your Oldpeak(oldpeak)</label>
+               <input type="float" name="sl" id="sl" class="form-control" required>
+               <label for="sl" class="ph-area">Enter the ST Depression Induced by Exercise</label>
              </div>
 
              <div class="form-group">
-               <select class="form-control chosenn" name="slope" required="required">
-                 <option value="" selected>Select Peak Exercise ST Segment (Slope)</option>
-                 <option value="0">Upsloping</option>
-                 <option value="1">Flat</option>
-                 <option value="2">Downsloping</option>
-               </select>
+               <input type="float" name="op" id="op" class="form-control" required>
+               <label for="op" class="ph-area">Enter the Slope of the peak Exercise ST Segment</label>
              </div>
 
              <div class="form-group">
-               <select class="form-control chosenn" name="ca" required="required">
-                 <option value="" selected>Number of Major Vessels (ca)</option>
-                 <option value="0">Zero</option>
-                 <option value="1">One</option>
-                 <option value="2">Two</option>
-                 <option value="3">Three</option>
-                 <option value="4">Four</option>
-               </select>
+               <input type="float" name="ca" id="ca" class="form-control" required>
+               <label for="ca" class="ph-area">Enter Major Vessels colored by Flourosopy</label>
              </div>
 
              <div class="form-group">
-               <select class="form-control chosenn" name="thal" required="required">
-                 <option value="" selected>Select Thal Type (thal)</option>
-                 <option value="0">Normal</option>
-                 <option value="1">Fixed</option>
-                 <option value="2">Defect</option>
-                 <option value="3">Reversable</option>
-               </select>
+               <input type="float" name="thal" id="thal" class="form-control" required>
+               <label for="thal" class="ph-area">Enter the Thal Value ( 0 = Normal, 1 = Fixed Defect, 2 = Reversable )</label>
              </div>
+
 
            <div class="form-group">
              <input type="submit" class="btn btn-primary" value="Submit">
@@ -267,6 +235,18 @@
        </div>
      </div>
    </div>
+
+
+   <div class="fin_res">
+       {% if label %}
+            {% if label == 1 %}
+                <h3 style = "color:red">Person has Heart Disease !</h3>
+            {% else %}
+                <h3 style ="color:green"> Person does not have Heart Disease !</h3>
+            {% endif %}
+       {% endif %}
+
+    </div>
 
 
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # Loading the ML Models
 dia_pred = pickle.load(open('models/dia_trained_model.pkl', 'rb'))
-heart_pred = pickle.load(open('models/heart_trained_model.pkl', 'rb'))
+heart_pred = pickle.load(open('models/heart_trained_model1.pkl', 'rb'))
 park_pred = pickle.load(open('models/park_trained_model.pkl', 'rb'))
 
 
@@ -90,10 +90,10 @@ def diabetes_result():
         dpf = request.form.get("DPF")
         age = request.form.get("Age")
 
-        input_data = (preg, glu, bp, stv, insulin, bmi, dpf, age)
+        input_data_dia = (preg, glu, bp, stv, insulin, bmi, dpf, age)
 
         # Transforming to Numpy Array
-        input_data_to_numpy_array = np.asarray(input_data)
+        input_data_to_numpy_array = np.asarray(input_data_dia)
 
         # Reshaping the Data of the Model for one instance
         input_dat_reshaped = input_data_to_numpy_array.reshape(1, -1)
@@ -102,7 +102,7 @@ def diabetes_result():
         scaler.fit(input_dat_reshaped)
         std_data = scaler.transform(input_dat_reshaped)
         # Using the obj of ML Model
-        predict = dia_pred.predict(std_data)
+        predict = heart_pred.predict(std_data)
 
         if predict[0] == 1:
             return render_template('diabetes.html', label=1)
@@ -116,9 +116,88 @@ def diabetes_result():
 def heart():
     return render_template('heart.html')
 
+@app.route('/heart', methods=['POST'])
+def heart_result():
+        scaler = StandardScaler()
+
+        age1 = request.form.get("age")
+        sex = request.form.get("sex")
+        cp = request.form.get("cp")
+        RBP = request.form.get("RBP")
+        chol = request.form.get("chol")
+        FBS = request.form.get("FBS")
+        RER = request.form.get("RER")
+        thalach = request.form.get("thalach")
+        ex = request.form.get("ex")
+        sl = request.form.get("sl")
+        op = request.form.get("op")
+        ca = request.form.get("ca")
+        thal = request.form.get("thal")
+
+        input_data_heart = (age1, sex, cp, RBP, chol, FBS, RER, thalach, ex, sl, op, ca, thal)
+
+        # Transforming to Numpy Array
+        input_data_to_numpy_array_heart = np.asarray(input_data_heart)
+
+        # Reshaping the Data of the Model for one instance
+        input_dat_reshaped_heart = input_data_to_numpy_array_heart.reshape(1, -1)
+
+        # Standardize the input_data
+        scaler.fit(input_dat_reshaped_heart)
+        std_data_heart = scaler.transform(input_dat_reshaped_heart)
+        # Using the obj of ML Model
+        predict_heart = heart_pred.predict(std_data_heart)
+
+        if predict_heart[0] == 1:
+            return render_template('heart.html', label=1)
+        else:
+            return render_template('heart.html', label=-1)
+
+        return "Please Enter Correct Values ! "
+
 @app.route('/parkinsons')
 def parkinsons():
     return render_template('parkinsons.html')
+
+
+@app.route('/parkinsons', methods=['POST'])
+def parkinsons_result():
+        scaler = StandardScaler()
+
+        age1 = request.form.get("age")
+        sex = request.form.get("sex")
+        cp = request.form.get("cp")
+        RBP = request.form.get("RBP")
+        chol = request.form.get("chol")
+        FBS = request.form.get("FBS")
+        RER = request.form.get("RER")
+        thalach = request.form.get("thalach")
+        ex = request.form.get("ex")
+        sl = request.form.get("sl")
+        op = request.form.get("op")
+        ca = request.form.get("ca")
+        thal = request.form.get("thal")
+
+        input_data_heart = (age1, sex, cp, RBP, chol, FBS, RER, thalach, ex, sl, op, ca, thal)
+
+        # Transforming to Numpy Array
+        input_data_to_numpy_array_heart = np.asarray(input_data_heart)
+
+        # Reshaping the Data of the Model for one instance
+        input_dat_reshaped_heart = input_data_to_numpy_array_heart.reshape(1, -1)
+
+        # Standardize the input_data
+        scaler.fit(input_dat_reshaped_heart)
+        std_data_heart = scaler.transform(input_dat_reshaped_heart)
+        # Using the obj of ML Model
+        predict = heart_pred.predict(std_data_heart)
+
+        if predict[0] == 1:
+            return render_template('heart.html', label=1)
+        else:
+            return render_template('heart.html', label=-1)
+
+        return "Please Enter Correct Values ! "
 
 # @app.get("/chat")
 

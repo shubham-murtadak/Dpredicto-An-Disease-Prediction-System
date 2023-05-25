@@ -174,22 +174,22 @@
                <label for="Pregnancies" class="ph-area">Enter Your Pregnancies</label>
              </div>
              <div class="form-group">
-               <input type="number" name="Glucose" id="Glucose" class="form-control" required>
+               <input type="float" name="Glucose" id="Glucose" class="form-control" required>
                <label for="Glucose" class="ph-area">Enter Your Glucose level</label>
              </div>
 
              <div class="form-group">
-               <input type="number" name="BP" id="bp" class="form-control" required>
+               <input type="float" name="BP" id="bp" class="form-control" required>
                <label for="bp" class="ph-area">Enter Your Blood Pressure Value</label>
              </div>
              <div class="form-group">
-               <input type="number" name="SkinThickness" id="sk" class="form-control" required>
+               <input type="float" name="SkinThickness" id="sk" class="form-control" required>
                <label for="sk" class="ph-area">Enter Your Skin Thickness Value</label>
              </div>
 
          
              <div class="form-group">
-               <input type="number" name="Insulin" id="insulin" class="form-control" required>
+               <input type="float" name="Insulin" id="insulin" class="form-control" required>
                <label for="insulin" class="ph-area">Enter Your Insulin level</label>
              </div>
          
@@ -215,9 +215,9 @@
    <div class="fin_res">
        {% if label %}
             {% if label == 1 %}
-                <h3 style = "color:red">Person has Diabetes</h3>
+                <h3 style = "color:red">Person has Diabetes !</h3>
             {% else %}
-                <h3 style ="color:green"> Person does not have Diabetes</h3>
+                <h3 style ="color:green"> Person does not have Diabetes !</h3>
             {% endif %}
        {% endif %}
 
