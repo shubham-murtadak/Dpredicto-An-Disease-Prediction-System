@@ -120,19 +120,19 @@ def heart():
 def parkinsons():
     return render_template('parkinsons.html')
 
-# @app.get("/chat")
+@app.get("/chat")
 
-# def index_get():
-#     return render_template("cbase.html")
+def index_get():
+    return render_template("cbase.html")
 
 
-# # Whats the use of this code ?
-# @app.post("/predict")
-# def predict():
-#     text=request.get_json().get("message")
-#     response=get_response(text)
-#     message={"answer":response}
-#     return jsonify(message)
+# Whats the use of this code ?
+@app.post("/predict")
+def predict():
+    text=request.get_json().get("message")
+    response=get_response(text)
+    message={"answer":response}
+    return jsonify(message)
 
 
 
