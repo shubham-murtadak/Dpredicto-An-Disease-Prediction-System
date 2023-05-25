@@ -99,7 +99,7 @@ def diabetes_result():
         input_dat_reshaped = input_data_to_numpy_array.reshape(1, -1)
 
         # Standardize the input_data
-
+        scaler.fit(input_dat_reshaped)
         std_data = scaler.transform(input_dat_reshaped)
         # Using the obj of ML Model
         predict = dia_pred.predict(std_data)
