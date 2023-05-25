@@ -34,6 +34,7 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/contact',  methods=["POST"])
 def contact_us():
 
     # No need for OTP here, for appointment booking use OTP create a button confirm booking once clicked run the otp code
@@ -68,8 +69,8 @@ def contact_us():
     email = request.form.get('email')
     query = request.form.get('Message')
 
-    GenEmail(email,name)
-    return render_template(contact.html, label = 1)
+    GenEmail(email, name)
+    return render_template("contact.html", label=1)
 
 # Creating Dpred Page
 @app.route('/diabetes')
@@ -160,9 +161,6 @@ def parkinsons():
     return render_template('parkinsons.html')
 
 
-@app.get("/chat")
-
-
 @app.route('/parkinsons', methods=['POST'])
 def parkinsons_result():
         scaler = StandardScaler()
@@ -203,19 +201,20 @@ def parkinsons_result():
         return "Please Enter Correct Values ! "
 
 # @app.get("/chat")
-
-
-def index_get():
-    return render_template("cbase.html")
-
-
-# Whats the use of this code ?
-@app.post("/predict")
-def predict():
-    text=request.get_json().get("message")
-    response=get_response(text)
-    message={"answer":response}
-    return jsonify(message)
+# @app.get("/chat")
+#
+#
+# def index_get():
+#     return render_template("cbase.html")
+#
+#
+# # Whats the use of this code ?
+# @app.post("/predict")
+# def predict():
+#     text=request.get_json().get("message")
+#     response=get_response(text)
+#     message={"answer":response}
+#     return jsonify(message)
 
 
 
