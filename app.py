@@ -102,7 +102,7 @@ def diabetes_result():
         scaler.fit(input_dat_reshaped)
         std_data = scaler.transform(input_dat_reshaped)
         # Using the obj of ML Model
-        predict = heart_pred.predict(std_data)
+        predict = dia_pred.predict(std_data)
 
         if predict[0] == 1:
             return render_template('diabetes.html', label=1)
@@ -193,7 +193,7 @@ def parkinsons_result():
         scaler.fit(input_dat_reshaped_heart)
         std_data_heart = scaler.transform(input_dat_reshaped_heart)
         # Using the obj of ML Model
-        predict = heart_pred.predict(std_data_heart)
+        predict = park_pred.predict(std_data_heart)
 
         if predict[0] == 1:
             return render_template('heart.html', label=1)
@@ -217,7 +217,17 @@ def predict():
     message={"answer":response}
     return jsonify(message)
 
+@app.route('/appointment', methods=['GET', 'POST'])
+def appointment():
+    if request.method == 'POST':
+        # Process the form data
+        # Retrieve the form input using request.form.get or request.form['input_name']
+        # Perform necessary operations or validations
+        
+        # Return a response or redirect to a new page
+        return "Appointment booked successfully!"
 
-
+    # Render the HTML template for the appointment form
+    return render_template('appoitment.html')
 if __name__ == '__main__':
     app.run(debug=True)
