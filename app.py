@@ -232,7 +232,7 @@ class Appointment(db.Model):
     time = db.Column(db.String(8), nullable=False)
     disease = db.Column(db.String(100), nullable=False)
 
-Create the database tables
+# Create the database tables
 db.create_all()
 
 @app.route('/a')
