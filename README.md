@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Dpredicto
 
@@ -83,3 +84,6 @@ D-predicto offers a comprehensive solution for disease prediction, incorporating
 
 * ak_639
 * shubham-murtadak
+=======
+# Dpredicto-An-Disease-Prediction-System
+>>>>>>> 376a2f7ee2198cb1f2a6fa626ac13a7baac47b39
