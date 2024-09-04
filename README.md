@@ -1,1 +1,0 @@
-# Dpredicto-An-Disease-Prediction-System
