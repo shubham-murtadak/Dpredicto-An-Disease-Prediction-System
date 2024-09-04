@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-
-# Dpredicto
+# Dpredicto-An-Disease-Prediction-System
 
 D-predicto is an end-to-end application designed to predict diseases like diabetes, heart disease, and Parkinson's disease with respective accuracies of 77%, 82%, and 87%. Leveraging SVM and Logistic Regression models, this project aims to provide accurate predictions for these ailments. Additionally, it integrates an NLP-driven chatbot into the website, enhancing user interaction and information accessibility.
 
@@ -85,5 +83,3 @@ D-predicto offers a comprehensive solution for disease prediction, incorporating
 * ak_639
 * shubham-murtadak
 =======
-# Dpredicto-An-Disease-Prediction-System
->>>>>>> 376a2f7ee2198cb1f2a6fa626ac13a7baac47b39
