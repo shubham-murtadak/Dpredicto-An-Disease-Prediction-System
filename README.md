@@ -78,8 +78,5 @@ If there's a requirements.txt file in the project, this command installs all the
 ## Conclusion
 
 D-predicto offers a comprehensive solution for disease prediction, incorporating machine learning models and an interactive chatbot. Its accuracy rates demonstrate its reliability in predicting these critical ailments, aiming to assist users in early diagnosis and information retrieval.
-## Contributors
 
-* shubham-murtadak
-  
 =======
