@@ -52,14 +52,14 @@ Below are glimpses of D-predicto's interface:
 
 | Screenshot | Description         |  
 |------------|---------------------|  
-| ![a](screenshots/a.png) | **Landing Page** 🌟 |  
-| ![b](screenshots/b.png) | **Login Page** 🔑 |  
-| ![c](screenshots/c.png) | **Disease Prediction** 🔬 |  
-| ![d](screenshots/d.png) | **Prediction Results** 📊 |  
-| ![e](screenshots/e.png) | **Chatbot Interaction** 🤖 |  
-| ![f](screenshots/f.png) | **Doctor Appointment Booking** 📅 |  
-| ![g](screenshots/g.png) | **Profile Page** 🧑‍⚕️ |  
-| ![h](screenshots/h.png) | **Logout Screen** 🚪 |  
+| ![a](Screenshots/a.png) | **Landing Page** 🌟 |  
+| ![b](Screenshots/b.png) | **services** 🔑 |  
+| ![c](Screenshots/c.png) | **Doctors intro** 🔬 |  
+| ![d](Screenshots/d.png) | **Dibeties prediction** 📊 |  
+| ![e](Screenshots/e.png) | **Heart Disease prediction** 📊 |  
+| ![f](Screenshots/f.png) | **Perkinsons prediction** 📅 |  
+| ![g](Screenshots/g.png) | **About US** 🧑‍⚕️ |  
+| ![h](Screenshots/h.png) | **Login** 🚪 |  
 
 ---
 

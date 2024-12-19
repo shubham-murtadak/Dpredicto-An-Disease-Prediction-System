@@ -1,229 +1,140 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 150%;
-    display: block;
-  }
-}
-</style>
-<!doctype html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
+    <title>Dpredicto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <style>
-          body {
+    <style>
+        body {
             background-image: url("../static/img/b1.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-            /* Additional background styles */
-          }
-        </style>
-    <title>Dpredicto</title>
-</head>
-</div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand text-warning" href="#">D'predicto</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/diabetes">Diabetes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/heart">Heart Disease</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/parkinsons">Perkinsons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/contact">Contact us</a>
-                </li>
+        }
 
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .team-member {
+            flex: 0 1 300px; /* Set a fixed size for the cards */
+            text-align: center;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .team-member-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="#">D'predicto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/diabetes">Diabetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/heart">Heart Disease</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/parkinsons">Parkinson's</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact">Contact us</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
-<div class="about-section">
+    <div class="about-section">
+        <h1>About Us</h1>
+        <p>We are aspiring Data Scientists committed to innovation and excellence.</p>
+    </div>
 
-  <h1>About Us Page</h1>
-  <p>We are the intelligent Aspiring Data Scientists </p>
-  <p></p>
-</div>
-<style>
-    .team-members {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-    }
-  
-    .team-member {
-      flex: 1;
-      text-align: center;
-    }
-  
-    .team-member-img {
-      height: 200px; /* Adjust the height as needed */
-      object-fit: cover;
-    }
-  </style>
-  
-  <h2 style="text-align:center">Our Team</h2>
-  <div class="team-members">
-    <div class="team-member">
-      <div class="card">
-        <img src="../static/img/ak.jpeg" alt="Jane" class="team-member-img">
-        <div class="container">
-          <h5>Akshata Kamerkar</h5>
-          <p class="title">Team Member</p>
-          <p>She's the genius half of our dynamic duo, driving innovation as a female cofounder.</p>
-          <p>ak@example.com</p>
-          <p><button class="button">Contact</button></p>
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="team-members">
+        <div class="team-member">
+            <div class="card">
+                <img src="../static/img/ak.jpeg" alt="Akshata Kamerkar" class="team-member-img">
+                <div class="container">
+                    <h5>Akshata Kamerkar</h5>
+                    <p class="title">Team Member</p>
+                    <p>She's the genius half of our dynamic duo, driving innovation as a female co-founder.</p>
+                    <p>ak@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <div class="team-member">
-      <div class="card">
-        <img src="../static/img/shubh.jpeg" alt="Mike" class="team-member-img">
-        <div class="container">
-          <h5>Shubham Murtadak</h5>
-          <p class="title">Team Member</p>
-          <p>He's the mastermind half of our dynamic duo, spearheading innovation as a male cofounder.</p>
-          <p>sam@example.com</p>
-          <p><button class="button">Contact</button></p>
+        <div class="team-member">
+            <div class="card">
+                <img src="../static/img/shubh.jpeg" alt="Shubham Murtadak" class="team-member-img">
+                <div class="container">
+                    <h5>Shubham Murtadak</h5>
+                    <p class="title">Team Member</p>
+                    <p>He's the mastermind half of our dynamic duo, spearheading innovation as a male co-founder.</p>
+                    <p>shubhammurtadak022@gmail.com</p>
+                    <p><button class="button">Contact</button></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    
-    <div class="team-member">
-      <div class="card">
-        <img src="../static/img/tej.jpeg" alt="John" class="team-member-img">
-        <div class="container">
-          <h5>Tejasraj Hadpe </h5>
-          <p class="title">Team Member</p>
-          <p>He turns ideas into visual masterpieces, painting the canvas of innovation with his artistic brilliance.</p>
-          <p>th@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="team-member">
-      <div class="card">
-        <img src="../static/img/sar.jpeg" alt="Placeholder" class="team-member-img">
-        <div class="container">
-          <h5>Sarvesh Kamble </h5>
-          <p class="title">Team Member</p>
-          <p>With his coding prowess, he weaves lines of logic to create digital wonders, making technology dance to his command.</p>
-          <p>sk@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="team-member">
-      <div class="card">
-        <img src="../static/img/ani.jpeg" alt="Placeholder" class="team-member-img">
-        <div class="container">
-          <h5>Aniket Hupale </h5>
-          <p class="title">Team Member</p>
-          <p>Armed with his persuasive charm, he conquers markets and captivates audiences, transforming products into sensations.</p>
-          <p>ah@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
+
 </html>

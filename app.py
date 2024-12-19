@@ -233,7 +233,7 @@ class Appointment(db.Model):
     disease = db.Column(db.String(100), nullable=False)
 
 # Create the database tables
-db.create_all()
+# db.create_all()
 
 @app.route('/a')
 def appointment():
@@ -243,8 +243,10 @@ def appointment():
 def appointment_booking():
     # No need for OTP here, for appointment booking use OTP create a button confirm booking once clicked run the otp code
 
-    mail_user = os.environ.get('TestUser')
-    mail_pass = os.environ.get('TestUserPass')
+    mail_user = 'test@gmail.com'
+    mail_pass = 'pass'
+    # mail_user = os.environ.get('TestUser')
+    # mail_pass = os.environ.get('TestUserPass')
 
     def GenEmailA(email, name, date, time, disease):
         subject = "Appointment Confirmation!"
@@ -316,7 +318,7 @@ def view_excel():
 
 
 if __name__ == '__main__':
-    db.create_all()
+    # db.create_all()
     app.run(debug=True)
 
 
